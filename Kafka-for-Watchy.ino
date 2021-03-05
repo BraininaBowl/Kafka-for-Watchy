@@ -1,7 +1,7 @@
 #include <Watchy.h> //include the Watchy library
 #include "PTSerif_Bold10pt7b.h"
 #include "PTSerif_Regular10pt7b.h"
-#include "raven.h"        
+#include "meta.h"        
 
 class WatchFace : public Watchy { //inherit and extend Watchy class
   public:
@@ -34,9 +34,9 @@ class WatchFace : public Watchy { //inherit and extend Watchy class
     void drawWatchFace() { //override this method to customize how the watch face looks
 
       int16_t hoffset;
-      int16_t arraylength[] = {3,0,27};
+      int16_t arraylength[] = {1,0,47};
       String nmbrs[] = {"midnight", "one", "two", "three", "four", "five", "six", "seven", "eight","nine","ten","eleven","twelve","thirteen","fourteen","quarter","sixteen","seventeen","eighteen","nineteen","twenty","twenty-one","twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "half" };
-      String pretext[] = {"nce", "upon", "a"};
+      String pretext[] = {"ne"};
       String text[10] = {};
       if (currentTime.Hour == 12 && currentTime.Minute == 0){
         text[arraylength[1]] = "noon";
@@ -72,11 +72,11 @@ class WatchFace : public Watchy { //inherit and extend Watchy class
         }
       }
       
-      String posttext[] = {"dreary,", "while", "I", "pondered,", "weak", "and", "weary,", "over", "many", "a", "quaint", "and", "curious", "volume", "of", "forgotten", "lore.", "While", "I", "nodded,", "nearly", "napping,", "suddenly", "there", "came", "a", "tapping"};
+      String posttext[] = {"when", "Gregor", "Samsa", "woke", "from", "troubled", "dreams,", "he", "found", "himself", "transformed", "in", "his", "bed", "into", "a", "horrible", "vermin.", "He", "lay", "on", "his", "armour-like", "back,", "and", "if", "he", "lifted", "his", "head", "a", "little", "he", "could", "see", "his", "brown", "belly,", "slightly", "domed", "and", "divided", "by", "arches", "into", "stiff", "sections."};
       
       //drawbg
       display.fillScreen(GxEPD_WHITE);
-      display.drawBitmap(4, 4, Raven, 60, 60, GxEPD_BLACK);
+      display.drawBitmap(4, 4, Meta, 60, 60, GxEPD_BLACK);
 
       //draw time
       display.setTextColor(GxEPD_BLACK);
